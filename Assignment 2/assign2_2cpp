@@ -1,0 +1,78 @@
+#include<iostream>
+using namespace std ;
+
+class  tollbooth {
+    private:
+        int payCarCount;
+        int noPayCarCount;
+        double totalPayedAmt;
+
+    public:
+        tollbooth(){
+            this->payCarCount=0;
+            noPayCarCount=0;
+            totalPayedAmt=0.0;
+        }
+    
+        void payingCar(){
+            payCarCount++;
+            totalPayedAmt+=0.50;
+        }
+
+        void nopayCar(){
+            noPayCarCount++;
+        }
+
+        void printOnConsole(){
+            
+            cout<<"\n--------------------Car Data ------------------";
+            cout<<"\nThe count of car who payed toll : "<<payCarCount;
+            cout<<"\nThe count of car who Not payed toll : "<<noPayCarCount;
+            cout<<"\nTotal tax payed by car: "<<totalPayedAmt;
+            cout<<"\n------------------------------------------------";
+        }
+
+        int selectChoice(){
+            cout<<"\n------------------------------------------------";
+            cout<<"\nSelect choice ";
+            cout<<"\n------------------------------------------------";
+            cout<<"\n 1. Cars who pay tax or toll";
+            cout<<"\n 2. Cars who do not  pay tax or toll";
+            cout<<"\n 3. Print the records";
+            cout<<"\n 0. exit";
+            cout<<"\n------------------------------------------------\n";
+
+            int n;
+            cout<<"choose one :\t ";
+            cin>>n;
+
+            return n;
+        }
+};
+
+int main(){
+    tollbooth t1;
+    int n;
+    while((n=t1.selectChoice())!=0){
+        switch (n)
+        {
+        case 1:
+            t1.payingCar();
+            break;
+        case 2:
+            t1.nopayCar();
+            break;
+        case 3:
+            t1.printOnConsole();
+            break;
+        
+        default:
+        cout<<"\nEnter valid choice";
+            break;
+        }
+    }
+
+    return 0;
+    
+
+}
