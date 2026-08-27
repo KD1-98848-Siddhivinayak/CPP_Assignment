@@ -27,7 +27,7 @@ class Valumeofbox {
 
     void printValume(){
         double val=length*breadth*height;
-        cout<<"valume of box :"<<val;
+        cout<<"volume of box :"<<val;
 
         
     }
@@ -50,29 +50,30 @@ int menulist (void ){
 int main() {
 
     int choice;
-    Valumeofbox v1;
-    Valumeofbox v2(10);
-    Valumeofbox v3(10, 20, 30);
+    
+    
+  
 
     while ((choice = menulist()) != 0) {
 
         switch (choice) {
 
-            case 1:
-                
+            case 1:{
+                Valumeofbox v1;
                 v1.printValume();
                 break;
-
+            }
             case 2:
-                
+                {
+                    Valumeofbox v2(10);
                 v2.printValume();
-                break;
+                break;}
 
-            case 3:
-                
+            case 3:{
+                  Valumeofbox v3(10, 20, 30);
                 v3.printValume();
                 break;
-
+            }
             default:
                 cout << "Invalid data";
         }

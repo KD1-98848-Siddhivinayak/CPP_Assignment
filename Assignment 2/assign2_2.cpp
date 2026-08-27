@@ -3,31 +3,29 @@ using namespace std ;
 
 class  tollbooth {
     private:
-        int payCarCount;
-        int noPayCarCount;
+        unsigned int totalCars;
         double totalPayedAmt;
 
     public:
         tollbooth(){
-            this->payCarCount=0;
-            noPayCarCount=0;
+            totalCars=0;
             totalPayedAmt=0.0;
         }
     
         void payingCar(){
-            payCarCount++;
+            totalCars++;
             totalPayedAmt+=0.50;
         }
 
         void nopayCar(){
-            noPayCarCount++;
+           totalCars++;
         }
 
         void printOnConsole(){
             
             cout<<"\n--------------------Car Data ------------------";
-            cout<<"\nThe count of car who payed toll : "<<payCarCount;
-            cout<<"\nThe count of car who Not payed toll : "<<noPayCarCount;
+            cout<<"\nThe count of car who payed toll : "<<totalPayedAmt*2;
+            cout<<"\nThe count of car who Not payed toll : "<<totalCars-totalPayedAmt*2;
             cout<<"\nTotal tax payed by car: "<<totalPayedAmt;
             cout<<"\n------------------------------------------------";
         }
