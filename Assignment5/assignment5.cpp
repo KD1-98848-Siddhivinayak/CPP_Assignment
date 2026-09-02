@@ -93,11 +93,6 @@ public:
 
 };
 
-
-
-
-
-
 int main() {
     Person p;
     p.acceptrecord();
